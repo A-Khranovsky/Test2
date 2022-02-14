@@ -40,7 +40,6 @@
             </form>
         </div>
         <div class="col-8 col-sm-6 offset-md-3">
-            Messages
             <hr>
         </div>
         <div class="col-8 col-sm-6 offset-md-3">
