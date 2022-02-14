@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout');
-});
+//Route::get('/', function () {
+//    return view('layout');
+//});
 
-Route::post('/sendMessage', [MessageController::class, 'AddMessage'])->name('AddMessage');
+Route::post('/sendMessage', [MessageController::class, 'AddMessage'])->name('addMessage');
+Route::get('/', [MessageController::class, 'index'])->name('home');
