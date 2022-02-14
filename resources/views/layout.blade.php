@@ -18,7 +18,7 @@
         crossorigin="anonymous"></script>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-6 col-sm-2 offset-md-5">
+        <div class="col-8 col-sm-4 offset-md-4">
             <form method="post" action="/sendMessage">
                 @csrf
                 <div class="mb-3">
@@ -39,7 +39,10 @@
                 <button type="submit" class="btn btn-primary btn-sm">Send</button>
             </form>
         </div>
-        <div class="col-6 col-sm-2 offset-md-5">
+        <div class="col-8 col-sm-4 offset-md-4">
+        <hr>
+        </div>
+        <div class="col-8 col-sm-4 offset-md-4">
             @yield('content')
         </div>
     </div>

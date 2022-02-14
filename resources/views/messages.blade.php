@@ -1,32 +1,17 @@
 @extends('layout')
 @section('content')
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-        </tr>
-        </tbody>
-    </table>
+    @isset($messages)
+        @foreach($messages as $message)
+            <div class="card w-80 m-3 border-dark">
+                <div class="card-header">
+                    <h5 class="card-title">
+                        {{$message->id}}
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{$message->message}}</p>
+                </div>
+            </div>
+        @endforeach
+    @endisset
 @endsection
