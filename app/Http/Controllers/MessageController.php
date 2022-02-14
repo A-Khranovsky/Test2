@@ -9,8 +9,8 @@ class MessageController extends Controller
 {
     public function index()
     {
-        $messages = Message::all();
-        return view('messages', $messages);
+        $messages = Message::orderBy('id', 'desc')->get();
+        return view('messages', ['messages' => $messages]);
     }
 
     public function AddMessage(Request $request)

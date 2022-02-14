@@ -39,10 +39,11 @@
                 <button type="submit" class="btn btn-primary btn-sm">Send</button>
             </form>
         </div>
-        <div class="col-8 col-sm-4 offset-md-4">
-        <hr>
+        <div class="col-8 col-sm-6 offset-md-3">
+            Messages
+            <hr>
         </div>
-        <div class="col-8 col-sm-4 offset-md-4">
+        <div class="col-8 col-sm-6 offset-md-3">
             @yield('content')
         </div>
     </div>
