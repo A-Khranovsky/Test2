@@ -32,6 +32,9 @@
                 <textarea class="form-control" id="exampleFormControlTextareaMessage" rows="3"></textarea>
             </div>
         </div>
+        <div class="col-6 col-sm-2 offset-md-5">
+            @yield('content')
+        </div>
     </div>
 
 </div>
