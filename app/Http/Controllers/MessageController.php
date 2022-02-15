@@ -15,8 +15,12 @@ class MessageController extends Controller
 
     public function AddMessage(Request $request)
     {
+        $data = $request->validate([
+            'name' => ['required']
+        ]);
+
         Message::create([
-            'name' => $request->get('name'),
+            'name' => $data['name'],
             'email' => $request->get('email'),
             'message' => $request->get('message'),
         ]);

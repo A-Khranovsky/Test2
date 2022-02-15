@@ -28,9 +28,9 @@
                            @if($errors->has('name'))
                                 is-invalid
                             @endif" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback">
-                            @if($errors->has('username'))
+                            @if($errors->has('name'))
                                 <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                                    {{$errors->first('username')}}
+                                    {{$errors->first('name')}}
                                 </div>
                             @endif
                 </div>
