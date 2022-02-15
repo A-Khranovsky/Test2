@@ -22,14 +22,22 @@
             <form method="post" action="/sendMessage">
                 @csrf
                 <div class="mb-3">
-                    <label for="InputName" class="form-label">Name</label>
-                    <input name="name" id="InputName" class="form-control" type="text"
-                           aria-label="default input example">
+                    <label for="validationServerUsername" class="form-label">Name</label>
+                    <input name="name" id="validationServerUsername" type="text"
+                           aria-label="default input example" class="form-control
+                           @if($errors->has('name'))
+                                is-invalid
+                            @endif" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback">
+                            @if($errors->has('username'))
+                                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                                    {{$errors->first('username')}}
+                                </div>
+                            @endif
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInputEmail" class="form-label">Email address</label>
-                    <input name="email" type="email" class="form-control" id="exampleFormControlInputEmail"
-                           placeholder="name@example.com">
+                    <input name="email" type="email" id="exampleFormControlInputEmail"
+                           placeholder="name@example.com" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextareaMessage" class="form-label">Message</label>

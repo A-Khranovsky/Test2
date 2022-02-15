@@ -1,19 +1,27 @@
 @extends('layout')
 @section('content')
     @isset($messages)
-        @foreach($messages as $message)
-            <div class="card w-80 m-3 border-dark">
-                <div class="card-header">
-                    <h5 class="card-title">
-                        {{$message->name}}</h5>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">{{$message->message}}</p>
-                    <small class="text-muted">
-                        e-mail: {{$message->email}}
-                    </small>
-                </div>
-            </div>
-        @endforeach
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Message</th>
+                <th scope="col">Create date</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($messages as $message)
+            <tr>
+                <th scope="row">{{$message->id}}</th>
+                <td>{{$message->name}}</td>
+                <td>{{$message->email}}</td>
+                <td>{{$message->message}}</td>
+                <td>{{$message->created_at}}</td>
+            </tr>
+            @endforeach
+            </tbody>
+        </table>
     @endisset
 @endsection
