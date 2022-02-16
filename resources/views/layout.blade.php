@@ -36,13 +36,29 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInputEmail" class="form-label">Email address</label>
-                    <input name="email" type="email" id="exampleFormControlInputEmail"
-                           placeholder="name@example.com" class="form-control">
+                    <input name="email" type="text" id="exampleFormControlInputEmail"
+                           class="form-control
+                           @if($errors->has('email'))
+                                is-invalid
+                            @endif" aria-describedby="inputGroupPrepend3 exampleFormControlInputEmail">
+                            @if($errors->has('email'))
+                                <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                                    {{$errors->first('email')}}
+                                </div>
+                            @endif
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextareaMessage" class="form-label">Message</label>
-                    <textarea name="message" class="form-control" id="exampleFormControlTextareaMessage"
-                              rows="3"></textarea>
+                    <textarea name="message" class="form-control
+                        @if($errors->has('message'))
+                            is-invalid"
+                        @endif
+                        id="exampleFormControlTextareaMessage" rows="3"></textarea>
+                        @if($errors->has('message'))
+                            <div id="exampleFormControlTextareaMessage" class="invalid-feedback">
+                                {{$errors->first('message')}}
+                            </div>
+                        @endif
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm">Send</button>
             </form>
