@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Test for Andersen</title>
+    <title>Test</title>
 </head>
 <body>
 <h1></h1>
@@ -26,9 +26,10 @@
                     <input name="name" id="validationServerUsername" type="text"
                            aria-label="default input example" class="form-control
                            @error('name')
-                                is-invalid"
+                                is-invalid
+                           @enderror"
                                 aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback">
-
+                           @error('name')
                                 <div id="validationServerUsernameFeedback" class="invalid-feedback">
                                     {{$message}}
                                 </div>
@@ -39,7 +40,10 @@
                     <input name="email" type="text" id="exampleFormControlInputEmail"
                            class="form-control
                            @error('email')
-                                is-invalid" aria-describedby="inputGroupPrepend3 exampleFormControlInputEmail">
+                                is-invalid
+                           @enderror"
+                                aria-describedby="inputGroupPrepend3 exampleFormControlInputEmail">
+                           @error('email')
                                 <div id="validationServerUsernameFeedback" class="invalid-feedback">
                                     {{$message}}
                                 </div>
@@ -49,8 +53,10 @@
                     <label for="exampleFormControlTextareaMessage" class="form-label">Message</label>
                     <textarea name="message" class="form-control
                         @error('message')
-                            is-invalid"
+                            is-invalid
+                        @enderror"
                             id="exampleFormControlTextareaMessage" rows="3"></textarea>
+                        @error('message')
                             <div id="exampleFormControlTextareaMessage" class="invalid-feedback">
                                 {{$message}}
                             </div>
@@ -59,9 +65,9 @@
                 <button type="submit" class="btn btn-primary btn-sm">Send</button>
             </form>
         </div>
-        <div class="col-8 col-sm-6 offset-md-3">
-            <hr>
-        </div>
+{{--        <div class="col-8 col-sm-6 offset-md-3">--}}
+{{--            <hr>--}}
+{{--        </div>--}}
         <div class="col-8 col-sm-6 offset-md-3">
             @yield('content')
         </div>

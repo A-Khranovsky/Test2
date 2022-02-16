@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
-    @isset($messages)
+    @if($messages->isNotEmpty())
+        <br>
         <table class="table">
             <thead>
             <tr>
@@ -23,5 +24,5 @@
             @endforeach
             </tbody>
         </table>
-    @endisset
+    @endif
 @endsection
