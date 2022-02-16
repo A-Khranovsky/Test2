@@ -18,5 +18,5 @@ php artisan migrate
 * Message is a text not more than 300 characters.
 
 ## Leave container and down the services if you are exit
-press ctrl+d
+press ctrl+d  
 docker-compose down
