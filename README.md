@@ -17,5 +17,6 @@ php artisan migrate
 * E-mail must be like name@example.com, must be unique in DB.
 * Message is a text not more than 300 characters.
 
-## Down the services if you are exit
+## Leave container and down the services if you are exit
+press ctrl+d
 docker-compose down
