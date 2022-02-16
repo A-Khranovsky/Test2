@@ -25,40 +25,36 @@
                     <label for="validationServerUsername" class="form-label">Name</label>
                     <input name="name" id="validationServerUsername" type="text"
                            aria-label="default input example" class="form-control
-                           @if($errors->has('name'))
-                                is-invalid
-                            @endif" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback">
-                            @if($errors->has('name'))
+                           @error('name')
+                                is-invalid"
+                                aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback">
+
                                 <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                                    {{$errors->first('name')}}
+                                    {{$message}}
                                 </div>
-                            @endif
+                           @enderror
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlInputEmail" class="form-label">Email address</label>
                     <input name="email" type="text" id="exampleFormControlInputEmail"
                            class="form-control
-                           @if($errors->has('email'))
-                                is-invalid
-                            @endif" aria-describedby="inputGroupPrepend3 exampleFormControlInputEmail">
-                            @if($errors->has('email'))
+                           @error('email')
+                                is-invalid" aria-describedby="inputGroupPrepend3 exampleFormControlInputEmail">
                                 <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                                    {{$errors->first('email')}}
+                                    {{$message}}
                                 </div>
-                            @endif
+                           @enderror
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextareaMessage" class="form-label">Message</label>
                     <textarea name="message" class="form-control
-                        @if($errors->has('message'))
+                        @error('message')
                             is-invalid"
-                        @endif
-                        id="exampleFormControlTextareaMessage" rows="3"></textarea>
-                        @if($errors->has('message'))
+                            id="exampleFormControlTextareaMessage" rows="3"></textarea>
                             <div id="exampleFormControlTextareaMessage" class="invalid-feedback">
-                                {{$errors->first('message')}}
+                                {{$message}}
                             </div>
-                        @endif
+                        @enderror
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm">Send</button>
             </form>
